@@ -38,3 +38,4 @@ def delete_course(id):
     db.session.delete(course)
     db.session.commit()
     return jsonify({"msg": "Course deleted successfully"}), 200
+

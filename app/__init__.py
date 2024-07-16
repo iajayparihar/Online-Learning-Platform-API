@@ -3,7 +3,6 @@ from .extensions import db, ma, jwt, migrate
 from .auth.routes import auth_bp
 from .courses.routes import courses_bp
 from .content.routes import content_bp
-from .progress.routes import progress_bp
 from .forums.routes import forums_bp
 
 def create_app():
@@ -23,7 +22,6 @@ def create_app():
     app.register_blueprint(auth_bp, url_prefix='/auth')
     app.register_blueprint(courses_bp, url_prefix='/courses')
     app.register_blueprint(content_bp, url_prefix='/content')
-    app.register_blueprint(progress_bp, url_prefix='/progress')
     app.register_blueprint(forums_bp, url_prefix='/forums')
 
     return app

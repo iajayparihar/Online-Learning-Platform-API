@@ -24,13 +24,6 @@ class Content(db.Model):
     text_content = db.Column(db.Text, nullable=True)
 
 
-class Progress(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
-    course_id = db.Column(db.Integer, db.ForeignKey('course.id'), nullable=False)
-    progress_percentage = db.Column(db.Float, nullable=False)
-
-
 class ForumPost(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     course_id = db.Column(db.Integer, db.ForeignKey('course.id'), nullable=False)
