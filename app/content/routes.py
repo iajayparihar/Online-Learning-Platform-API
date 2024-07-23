@@ -21,13 +21,14 @@ def add_content():
     return jsonify({"msg": "Content added successfully", "content": content_schema.dump(new_content)}), 201
 
 @content_bp.route('/course/<int:course_id>', methods=['GET'])
-def get_content_by_course(course_id):   
+def get_content_by_course(course_id):
     contents = Content.query.filter_by(course_id=course_id).all()
     return jsonify(contents_schema.dump(contents)), 200
 
 
 @content_bp.route('/<int:content_id>', methods=['GET'])
 def get_content_detail(content_id):
+    
     content = Content.query.get_or_404(content_id)
     return jsonify(content_schema.dump(content)), 200
 
